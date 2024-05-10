@@ -45,9 +45,32 @@ body {
 }
 
 .container {
-    max-width: 960px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
+    font-size: 20px;
+}
+
+.container_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.description {
+    flex: 1;
+    padding-right: 20px
+}
+
+.image_wrapper {
+    flex: 0 1 50%;
+}
+
+.image {
+    flex: 0 1 50%;
+    max-width: 100%;
+    height: auto;
+    border: 4px solid #0b202e
 }
