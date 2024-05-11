@@ -23,18 +23,32 @@
     </div> 
     <br>
     <br>
+    <h1>Why do some NBA players make so much money?</h1>
     <div class = "text">
-        <p>Hello ipsum dolor sit amet consectetur adipisicing elit. Quae eius perferendis necessitatibus nemo excepturi laborum quod, tempora sint perspiciatis nisi similique voluptatibus. Hic perspiciatis libero maxime quam atque, unde repellat?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eius perferendis necessitatibus nemo excepturi laborum quod, tempora sint perspiciatis nisi similique voluptatibus. Hic perspiciatis libero maxime quam atque, unde repellat?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eius perferendis necessitatibus nemo excepturi laborum quod, tempora sint perspiciatis nisi similique voluptatibus. Hic perspiciatis libero maxime quam atque, unde repellat?</p>
+        <p>Over the past several decades, NBA salaries have gone through the roof. As seen below, the average salary has increased by about 15x since the mid-80s. The globalization of the league and increased sponsorships have led to some superstar players signing yearly deals worth tens of millions of dollars.</p>
+        <p>In this analysis, we will explore the factors that contribute to how much a player earns in order to better understand what the league values most in its players.</p>
     </div>
-    <br>
     <br>
     <div class="plot_wrapper">
         <iframe src="figures/nba_player_salaries_1985_to_2018.html" width="1300" height="750" frameborder="0"></iframe>
     </div>
     <br>
+    <h1>Which NBA player features have the highest correlation with their salaries?</h1>
     <br>
+    <div class="container">
+        <div class="container_wrapper">
+            <div class="description_left">
+                <p>To start our analysis, we first wanted to explore which features are the best indicator of how much a player will be paid. We selected 5 variables that we felt were the best measures of a player's value.</p>
+                <p>Points Per Game (PPG) had the highest positive correlation with salary (r ≈ 0.73). Value Over Replacement Player (VORP) had the second highest (r ≈ 0.68) and Win Shares (WS) came in third (r ≈ 0.58).</p>
+                <p>While PPG was the clear winner, all of the chosen variables demonstrated a positive correlation with salary, so we decided to explore them all to see what we could find.</p>
+            </div>
+            <div class="image_wrapper">
+                <img src="corr_matrix.jpg" alt="Correlation Matrix" class="image">
+            </div>
+    </div>
+    <br>
+    <br>
+</div>
 </body>
 
 </html>
