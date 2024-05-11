@@ -6,25 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sources</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional CSS for table styling */
+        .tableContainer {
+            flex: 1; /* Equal width for both containers */
+            overflow-x: auto; /* Add horizontal scrollbar if needed */
+            border: 1px solid black;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tablesContainer {
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space items evenly */
+        }
+    </style>
 </head>
-  
+
 <body>
-    <div class = "hero">
-        <div class = "navigation">
-            <a href="index.html" class = "button">Home</a>
-            <a href="analysis.html" class = "button">Analysis</a>
-            <a href="winshares.html" class = "button">Win Shares</a>
-            <a href="sources.html" class = "button">Sources</a>
-        </div>
-        <div class = "title">
-            <h1><strong>Sources</strong></h1>
-        </div>
-    </div> 
-    <br>
-    <br>
-    <div class = "container">
-        <p>The NBA player data containing information about salaries and individual statistics can be found on Kaggle here: <a href="https://www.kaggle.com/datasets/jamiewelsh2/nba-player-salaries-2022-23-season?select=nba_2022-23_all_stats_with_salary.csv">2022-23</a> and <a href="https://www.kaggle.com/datasets/ulrikthygepedersen/nba-player-salaries?select=salaries_1985to2018.csv">1985-2018</a>.</p>
+<div class="hero">
+    <div class="navigation">
+        <a href="index.html" class="button">Home</a>
+        <a href="analysis.html" class="button">Analysis</a>
+        <a href="winshares.html" class="button">Win Shares</a>
+        <a href="sources.html" class="button">Sources</a>
     </div>
+    <div class="title">
+        <h1><strong>Sources</strong></h1>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <p>The NBA player data containing information about salaries and individual statistics can be found on Kaggle here: <a href="https://www.kaggle.com/datasets/jamiewelsh2/nba-player-salaries-2022-23-season?select=nba_2022-23_all_stats_with_salary.csv">2022-23</a> and <a href="https://www.kaggle.com/datasets/ulrikthygepedersen/nba-player-salaries?select=salaries_1985to2018.csv">1985-2018</a>.</p>
+
+    <!-- Tables will be inserted here dynamically -->
+    <div class="tablesContainer">
+        <div class="tableContainer">
+            <h2>2022-23 Salaries Example</h2>
+            <div id="tableContainer1"></div>
+        </div>
+        <div class="tableContainer">
+            <h2>1985-2018 Salaries Example</h2>
+            <div id="tableContainer2"></div>
+        </div>
+    </div>
+
+    <div class="footnote">
+        <p>Note: These tables display small subsets of the data for demonstration purposes.</p>
+    </div>
+</div>
+
+<script>
+    function loadCSV(filename, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                callback(xhr.responseText);
+            }
+        };
+        xhr.open("GET", filename, true);
+        xhr.send();
+    }
+
+    function parseCSVAndDisplay(data, containerId) {
+        var rows = data.split('\n');
+        var tableHTML = '<table border="1">';
+        // Display only first 10 rows and first 5 columns
+        for (var i = 0; i < Math.min(10, rows.length); i++) {
+            var cells = rows[i].split(',');
+            tableHTML += '<tr>';
+            for (var j = 0; j < Math.min(5, cells.length); j++) {
+                tableHTML += '<td>' + cells[j] + '</td>';
+            }
+            tableHTML += '</tr>';
+        }
+        tableHTML += '</table>';
+        document.getElementById(containerId).innerHTML = tableHTML;
+    }
+
+    loadCSV('resources/nba_2022-23_all_stats_with_salary.csv', function(response) {
+        parseCSVAndDisplay(response, 'tableContainer1');
+    });
+
+    // Load and display NBA salaries 1985-2018 table
+    loadCSV('resources/salaries_1985to2018.csv', function(response) {
+        parseCSVAndDisplay(response, 'tableContainer2');
+    });
+</script>
 </body>
 
 </html>
