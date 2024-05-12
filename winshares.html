@@ -22,11 +22,27 @@
     </div> 
     <br>
     <br>
-    <div class = "container">
-        <p>Hello ipsum dolor sit amet consectetur adipisicing elit. Quae eius perferendis necessitatibus nemo excepturi laborum quod, tempora sint perspiciatis nisi similique voluptatibus. Hic perspiciatis libero maxime quam atque, unde repellat?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eius perferendis necessitatibus nemo excepturi laborum quod, tempora sint perspiciatis nisi similique voluptatibus. Hic perspiciatis libero maxime quam atque, unde repellat?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eius perferendis necessitatibus nemo excepturi laborum quod, tempora sint perspiciatis nisi similique voluptatibus. Hic perspiciatis libero maxime quam atque, unde repellat?</p>
+    <h1>Does the league value offensive and defensive production the same?</h1>
+    <div class = "text">
+        <p>In the NBA, win shares are an estimate of how many wins each player contributed to their team's overall record. The stat can be broken down further into offensive and defensive win shares that are calculated by the player's contributions on each side of the court.</p>
+        <p>As seen below, win shares are predominantly influenced by offensive performances rather than defensive contributions. Players who excel offensively tend to command higher salaries, with 21 out of the top 30 players earning over $20 million, compared to just 13 of the top 30 defensively efficient players receiving similar compensation.</p>
+        <p>This trend suggests that teams prioritize offensive efficiency when allocating salaries, as evidenced by their willingness to pay more for players who excel in offensive categories over those who are defensively adept.</p>
     </div>
+    <br>
+        <div class="plot_wrapper">
+            <iframe src="figures/ows_dws_scatter.html" width="1250" height="500" frameborder="0"></iframe>
+        </div>
+    <br>
+    <h1>Are these trends consistent across every position?</h1>
+    <div class = "text">
+       <p>As seen in the bar chart below, Centers have the highest offensive and defensive win shares among all positions, yet they command the second lowest average salary. In contrast, Small Forwards, despite having the lowest offensive win shares, receive the third highest average salary. Shooting Guards (SG) earn the lowest average salary, but they hold the second highest defensive win shares. Point Guards (PG) are at the top in terms of average salary, ranking second in offensive win shares, but they have the lowest defensive win shares among all positions.</p>
+    </div>
+    <br>
+        <div class="plot_wrapper">
+            <iframe src="figures/winshares_position.html" width="1250" height="500" frameborder="0"></iframe>
+        </div>
+    <br>
+    <br>
 </body>
 
 </html>
