@@ -17,7 +17,7 @@
         <a href="sources.html" class="button">Sources</a>
     </div>
     <div class="title">
-        <h1><strong>Analysis</strong></h1>
+        <h2><strong>Analysis</strong></h2>
     </div>
 </div>
 <br>
@@ -31,7 +31,7 @@
     <div class="plot_wrapper">
         <iframe src="figures/salary_vs_points.html" width="1250" height="650" frameborder="0"></iframe>
     </div>
-<h1>How does age factor in to a player's relative value?</h1>
+<h1>How does age factor in to a player's value relative to PPG?</h1>
 <br>
 <div class="container">
     <div class="container_wrapper">
@@ -42,6 +42,28 @@
         </div>
         <div class="image_wrapper">
             <img src="salary_points_line.jpg" alt="Salary_Points_Line" class="image">
+        </div>
+</div>
+<br>
+<h1>Do these findings hold true for VORP? How does position factor in?</h1>
+<div class = "text">
+    <p>Value over replacement player (VORP) is a metric that compares each player's contributions to a theoretical replacement player. As seen in the scatterplot below, there is a strong correlation between players with high VORP and playeres who command high salaries.</p>
+    <p>Breaking down salaries by position yields interesting results (as seen in the box plots on the right). Out of the top 200 highest-paid players, point guards earn the highest salaries with a median of $21.25 million, while centers earn a relatively meager $10.73 million per year. The top 3 highest paid players in the league were all point guards, with Stephen Curry earning the most at $48 million per year.</p>
+</div>
+<br>
+    <div class="plot_wrapper">
+        <iframe src="figures/vorp_salary.html" width="1250" height="650" frameborder="0"></iframe>
+    </div>
+<h1>What patterns are there between VORP, salary, and age?</h1>
+<br>
+<div class="container">
+    <div class="container_wrapper">
+        <div class="description_left">
+            <p>The figure on the right shows the distributions between standardly scaled salaries and VORP for each age bracket in the NBA. Similar to PPG, players in the early stages of their career tend to have a higher standardized VORP than salary.</p>
+            <p>While players aged 28-30 have the highest VORP on average, players aged 34-36 have the highest average salaries. This could be due to the fact that NBA contracts last for several years, so a player's current contract value is tied to their previous performance. As players decline with age and potentially encounter injuries, massive contracts that were awarded for great late-20s performance may no longer be such a good deal.</p>
+        </div>
+        <div class="image_wrapper">
+            <img src="salary_vorp_box.jpg" alt="Salary_Box_Vorp" class="image">
         </div>
 </div>
 <br>

@@ -88,3 +88,10 @@ body {
     height: auto;
 }
 
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 75px; /*I know this is egregious but h1 got messed up and I don't want to go back and update everything*/
+}
